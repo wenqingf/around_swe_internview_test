@@ -47,9 +47,11 @@ const ProductList = () => {
     }
   };
 
-
   return (
     <Container>
+      <Typography variant="h3" component="h3" align="center" gutterBottom sx={{ mt: 4, fontWeight: 'bold'}} >
+        Simple Card List
+      </Typography>
       <Grid container spacing={2}>
         {products.map((product) => (
           <Grid item xs={12} sm={6} md={4} lg={3} key={product.id}>
@@ -61,18 +63,19 @@ const ProductList = () => {
                 alt={product.name}
               />
               <CardContent>
-                <Typography gutterBottom variant="h5" component="div">
+                <Typography gutterBottom variant="h5" component="div" sx={{fontWeight: 'bold'}}>
                   {product.name}
-                </Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {product.description}
                 </Typography>
                 <Typography variant="h6" color="text.primary">
                   ${product.price}
                 </Typography>
+                <Typography variant="body2" color="text.secondary">
+                  {product.description}
+                </Typography>
+                
               </CardContent>
               <IconButton
-                sx={{ position: "absolute", top: 150, right: 16 }}
+                sx={{ position: "absolute", top: 10, left: 10 }}
                 onClick={() => handleDelete(product.id)}
                 color="error"
               >
